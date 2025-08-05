@@ -1,6 +1,6 @@
 package com.challenge.forohub.domain.user;
 
-public record UserAuthenticationData(
+public record UserAuthenticationDTO(
         String login,
         String password
 ) {

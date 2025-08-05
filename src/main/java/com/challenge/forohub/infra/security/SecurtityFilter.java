@@ -45,7 +45,7 @@ public class SecurtityFilter extends OncePerRequestFilter {
                 }
             } catch (Exception e) {
                 response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-                response.getWriter().write("{\"error\": \"Token inválido o expirado.\"}");
+                response.getWriter().write("{\"error\": \"Token invalido o expirado.\"}");
                 return;
             }
         }

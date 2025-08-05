@@ -20,8 +20,8 @@ public class Topic {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
-    private String menssage;
-    private LocalDateTime CreationDate;
+    private String message;
+    private LocalDateTime creationDate;
     @Enumerated(EnumType.STRING)
     private TopicStatus status;
     @ManyToOne(fetch = FetchType.LAZY)
@@ -29,7 +29,7 @@ public class Topic {
     private User user;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "curso_id")
-    private Course curso;
+    private Course course;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "answer_id")
     private Answer answer;
