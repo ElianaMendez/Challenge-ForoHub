@@ -1,8 +1,10 @@
 package com.challenge.forohub.domain.user;
 
+import jakarta.validation.constraints.NotBlank;
+
 public record UserAuthenticationDTO(
-        String login,
-        String password
+        @NotBlank String login,
+        @NotBlank String password
 ) {
 
 }

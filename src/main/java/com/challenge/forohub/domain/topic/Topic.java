@@ -21,6 +21,7 @@ public class Topic {
     private Long id;
     private String title;
     private String message;
+    @Column(name = "creation_date")
     private LocalDateTime creationDate;
     @Enumerated(EnumType.STRING)
     private TopicStatus status;
@@ -28,9 +29,6 @@ public class Topic {
     @JoinColumn(name = "user_id")
     private User user;
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "curso_id")
+    @JoinColumn(name = "course_id")
     private Course course;
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "answer_id")
-    private Answer answer;
 }

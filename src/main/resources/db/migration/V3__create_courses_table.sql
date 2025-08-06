@@ -1,0 +1,6 @@
+CREATE TABLE courses (
+    id BIGSERIAL PRIMARY KEY,
+    course_name VARCHAR(255) NOT NULL,
+    category VARCHAR(50) NOT NULL,
+    creation_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);

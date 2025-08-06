@@ -9,7 +9,6 @@ public record TopicResponseDTO(
         LocalDateTime creationDate,
         String status,
         String user,
-        String course,
-        String answer
+        String course
 ) {
 }

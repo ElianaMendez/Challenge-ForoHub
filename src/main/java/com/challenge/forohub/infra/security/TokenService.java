@@ -16,14 +16,14 @@ import java.time.ZoneOffset;
 
 @Service
 public class TokenService {
-    @Value("{api.security.secret}")
+    @Value("${api.security.secret}")
     private String apiSecret;
 
     public String generateToken(User user){
         try {
             Algorithm algorithm = Algorithm.HMAC256(apiSecret);
             return JWT.create()
-                    .withIssuer("foro hub api")
+                    .withIssuer("forohub-api")
                     .withSubject(user.getLogin())
                     .withClaim("id", user.getId())
                     .withIssuedAt(generateCreationDate())
@@ -44,7 +44,7 @@ public class TokenService {
         try {
             Algorithm algorithm = Algorithm.HMAC256(apiSecret);
             verifier = JWT.require(algorithm)
-                    .withIssuer("foro hub api")
+                    .withIssuer("forohub-api")
                     .build()
                     .verify(token);
 

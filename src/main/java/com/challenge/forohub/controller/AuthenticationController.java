@@ -5,7 +5,6 @@ import com.challenge.forohub.domain.user.UserAuthenticationDTO;
 import com.challenge.forohub.infra.security.DataJWTTokenDTO;
 import com.challenge.forohub.infra.security.TokenService;
 import jakarta.validation.Valid;
-import jakarta.validation.constraints.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -27,7 +26,8 @@ public class AuthenticationController {
     private TokenService tokenService;
 
     @PostMapping
-    public ResponseEntity userLogin(@RequestBody @Valid @NotNull UserAuthenticationDTO userAuthenticationDTO){
+    public ResponseEntity userLogin(@RequestBody @Valid UserAuthenticationDTO userAuthenticationDTO){
+        System.out.println("Entró al login con usuario: " + userAuthenticationDTO.login());
         try {
             var authenticationToken = new UsernamePasswordAuthenticationToken(
                     userAuthenticationDTO.login(),
@@ -37,7 +37,11 @@ public class AuthenticationController {
             System.out.println(authenticatedUser.getPrincipal());
             var JWTToken = tokenService.generateToken((User) authenticatedUser.getPrincipal());
 
+            System.out.println("Token generado: " + JWTToken);
+
             return ResponseEntity.ok(new DataJWTTokenDTO(JWTToken));
+
+            //return ResponseEntity.ok(new DataJWTTokenDTO(JWTToken));
         }catch (BadCredentialsException e){
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
                     .body("Credenciales invalidas");

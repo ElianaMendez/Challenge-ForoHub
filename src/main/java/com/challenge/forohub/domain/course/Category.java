@@ -1,9 +1,9 @@
 package com.challenge.forohub.domain.course;
 
 public enum Category {
-    PROGRAMACION,
+    PROGRAMMATION,
     TESTING,
-    DATOS,
-    DISENO,
+    DATA,
+    DESIGN,
     MARKETING
 }

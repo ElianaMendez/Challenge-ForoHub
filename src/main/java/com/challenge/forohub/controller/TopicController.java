@@ -53,7 +53,7 @@ public class TopicController {
         Topic topic = new Topic(null, request.title(), request.message(),
                 LocalDateTime.now(),
                 request.status() != null ? request.status() : TopicStatus.OPEN,
-                user, course, answer);
+                user, course);
 
         Topic saved = topicRepository.save(topic);
         return ResponseEntity.ok(toDTO(saved));
@@ -67,8 +67,7 @@ public class TopicController {
                 topic.getCreationDate(),
                 topic.getStatus().toString(),
                 topic.getUser().getName(),
-                topic.getCourse().getCourseName(),
-                topic.getAnswer() != null ? topic.getAnswer().getMessage() : null
+                topic.getCourse().getCourseName()
         );
     }
 }

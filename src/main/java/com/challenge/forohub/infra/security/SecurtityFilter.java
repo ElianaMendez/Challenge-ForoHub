@@ -28,7 +28,7 @@ public class SecurtityFilter extends OncePerRequestFilter {
         var authHeader = request.getHeader("Authorization");
 
         if(authHeader != null){
-            var token = authHeader.replace("Bearer","");
+            var token = authHeader.replace("Bearer ", "").trim();
 
             try{
                 var username = tokenService.getSubject(token);
@@ -49,5 +49,6 @@ public class SecurtityFilter extends OncePerRequestFilter {
                 return;
             }
         }
+        filterChain.doFilter(request, response);
     }
 }
