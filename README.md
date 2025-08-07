@@ -8,8 +8,8 @@
 - **Spring Boot 3.5.4**
 - **Spring Security con JWT**
 - **Maven**
-- **Flyway** (migración de base de datos)
-- **H2 Database** (modo desarrollo)
+- **Flyway** (migraciones en base de datos)
+- **PostgreSQL** 
 - **JPA & Hibernate**
 - **Lombok**
 - **Postman** (para pruebas de endpoints)
