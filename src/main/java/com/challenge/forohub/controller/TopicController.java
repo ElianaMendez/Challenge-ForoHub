@@ -117,4 +117,16 @@ public class TopicController {
         topicRepository.save(topic);
         return ResponseEntity.ok(new TopicDetailUpdatedDTO(topic));
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> deleteTopic(@PathVariable Long id) {
+        Optional<Topic> optionalTopic = topicRepository.findById(id);
+
+        if (optionalTopic.isPresent()) {
+            topicRepository.deleteById(id);
+            return ResponseEntity.noContent().build(); // 204 No Content
+        } else {
+            return ResponseEntity.notFound().build(); // 404 Not Found
+        }
+    }
 }
