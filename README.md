@@ -63,10 +63,12 @@ src/main/java/com/challenge/forohub/
 │
 └── ForohubApplication.java
 
+```plaintext
+
 🗃️ Migraciones con Flyway
 Ubicadas en resources/db.migration, las migraciones crean y poblan las tablas de usuarios, cursos, tópicos y respuestas.
 
-plaintext
+```plaintext
 resources/
 └── db.migration/
     ├── V1__Create-Table-Users.sql
@@ -78,6 +80,7 @@ resources/
     ├── V7__create_answers_table.sql
     ├── V8__insert_into_new_users.sql
     └── V9__insert_into_answers.sql
+```plaintext
 
 🔐 Autenticación
 La aplicación utiliza JWT (JSON Web Token) para autenticar a los usuarios.
@@ -85,15 +88,21 @@ La aplicación utiliza JWT (JSON Web Token) para autenticar a los usuarios.
 Endpoint: POST /login
 
 Request JSON:
+
+```plaintext
 {
   "login": "ana-martinez@forohub.com",
   "password": "123456"
 }
+```plaintext
 
 Response:
+
+```plaintext
 {
   "jwtToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
 }
+```plaintext
 
 Este token debe ser incluido en el header Authorization para consumir los endpoints protegidos:
 
