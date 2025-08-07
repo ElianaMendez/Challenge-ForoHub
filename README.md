@@ -63,7 +63,7 @@ src/main/java/com/challenge/forohub/
 │
 └── ForohubApplication.java
 
-```plaintext
+```
 
 🗃️ Migraciones con Flyway
 Ubicadas en resources/db.migration, las migraciones crean y poblan las tablas de usuarios, cursos, tópicos y respuestas.
