@@ -156,7 +156,7 @@ Response:
 ]
 ```
 
-🔸 Obtener tópico por ID (con respuestas)
+🔸 Obtener detalle de tópico por ID (con respuestas)
 GET /topic/{id}
 
 Response:
