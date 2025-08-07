@@ -4,8 +4,8 @@
 
 ## 🚀 Tecnologías utilizadas
 
-- **Java 17**
-- **Spring Boot 3**
+- **Java 21**
+- **Spring Boot 3.5.4**
 - **Spring Security con JWT**
 - **Maven**
 - **Flyway** (migración de base de datos)
