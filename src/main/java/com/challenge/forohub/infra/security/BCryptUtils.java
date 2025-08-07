@@ -18,15 +18,15 @@ public class BCryptUtils {
 
     // Metodo main para hacer pruebas manuales
     public static void main(String[] args) {
-//        // Generar hash
-//        String password = "securepass";
-//        String hash = generarHash(password);
-//        System.out.println("Hash generado: " + hash);
+        // Generar hash
+        String password = "adminPass321";
+        String hash = generarHash(password);
+        System.out.println("Hash generado: " + hash);
 
-        // Verificar password
-        String passwordParaVerificar = "123456";
-        String hashExistente = "$2a$12$EvgDZX3.Rnl6O5YTdNtVHOwrVEqhD1s8tVAXuGT6h1rygeA4shyD6"; // Reemplaza por un hash real
-        boolean resultado = verificarPassword(passwordParaVerificar, hashExistente);
-        System.out.println("¿Coincide la contraseña? " + resultado);
+//        // Verificar password
+//        String passwordParaVerificar = "123456";
+//        String hashExistente = "$2a$12$EvgDZX3.Rnl6O5YTdNtVHOwrVEqhD1s8tVAXuGT6h1rygeA4shyD6"; // Reemplaza por un hash real
+//        boolean resultado = verificarPassword(passwordParaVerificar, hashExistente);
+//        System.out.println("¿Coincide la contraseña? " + resultado);
     }
 }
