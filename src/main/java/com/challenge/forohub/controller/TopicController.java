@@ -2,6 +2,7 @@ package com.challenge.forohub.controller;
 
 import com.challenge.forohub.domain.answer.Answer;
 import com.challenge.forohub.domain.answer.AnswerRepository;
+import com.challenge.forohub.domain.answer.AnswerResponseDTO;
 import com.challenge.forohub.domain.course.Course;
 import com.challenge.forohub.domain.course.CourseRepository;
 import com.challenge.forohub.domain.topic.*;
@@ -13,6 +14,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -32,6 +34,9 @@ public class TopicController {
 
     @Autowired
     private AnswerRepository answerRepository;
+
+    @Autowired
+    private TopicService topicService;
 
     @GetMapping
     public ResponseEntity<List<TopicResponseDTO>> getAllTopics() {
@@ -53,7 +58,7 @@ public class TopicController {
         Topic topic = new Topic(null, request.title(), request.message(),
                 LocalDateTime.now(),
                 request.status() != null ? request.status() : TopicStatus.OPEN,
-                user, course);
+                user, course, new ArrayList<>());
 
         Topic saved = topicRepository.save(topic);
         return ResponseEntity.ok(toDTO(saved));
@@ -69,5 +74,11 @@ public class TopicController {
                 topic.getUser().getName(),
                 topic.getCourse().getCourseName()
         );
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<TopicIdResponseDTO> getTopicById(@PathVariable Long id) {
+        TopicIdResponseDTO response = topicService.display(id);
+        return ResponseEntity.ok(response);
     }
 }

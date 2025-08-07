@@ -25,7 +25,7 @@ public class Answer {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private User user;
-    private Boolean solution;
+    private boolean solution;
     @Column(name = "creation_date")
     private LocalDateTime CreationDate;
 }
