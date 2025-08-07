@@ -80,7 +80,7 @@ resources/
     ├── V7__create_answers_table.sql
     ├── V8__insert_into_new_users.sql
     └── V9__insert_into_answers.sql
-```plaintext
+```
 
 🔐 Autenticación
 La aplicación utiliza JWT (JSON Web Token) para autenticar a los usuarios.
@@ -94,7 +94,7 @@ Request JSON:
   "login": "ana-martinez@forohub.com",
   "password": "123456"
 }
-```plaintext
+```
 
 Response:
 
@@ -102,7 +102,7 @@ Response:
 {
   "jwtToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
 }
-```plaintext
+```
 
 Este token debe ser incluido en el header Authorization para consumir los endpoints protegidos:
 
@@ -114,13 +114,18 @@ Authorization: Bearer <token>
 POST /topic
 
 Body JSON:
+
+```plaintext
 {
   "title": "How to test with Selenium?",
   "message": "What is the best approach for end-to-end testing in Java?",
   "courseName": "Automated Testing with Selenium"
 }
+```
 
 Response:
+
+```plaintext
 {
   "id": 1,
   "title": "How to test with Selenium?",
@@ -130,11 +135,14 @@ Response:
   "userName": "Ana Martínez",
   "courseName": "Automated Testing with Selenium"
 }
+```
 
 🔹 Listar todos los tópicos
 GET /topic
 
 Response:
+
+```plaintext
 [
   {
     "id": 1,
@@ -146,11 +154,13 @@ Response:
     "courseName": "Automated Testing with Selenium"
   }
 ]
+```
 
 🔸 Obtener tópico por ID (con respuestas)
 GET /topic/{id}
 
 Response:
+```plaintext
 {
   "id": 1,
   "title": "Updated title",
@@ -176,16 +186,18 @@ Response:
     }
   ]
 }
+```
 
 🔹 Actualizar un tópico
 PUT /topic/{id}
 
 Body JSON:
+```plaintext
 {
   "title": "Updated title",
   "message": "Updated message"
 }
-
+```
 🔸 Eliminar un tópico
 DELETE /topic/{id}
 
