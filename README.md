@@ -91,8 +91,8 @@ Request JSON:
 
 ```plaintext
 {
-  "login": "ana-martinez@forohub.com",
-  "password": "123456"
+  "login": "pedro-torres@forohub.com",
+  "password": "pass789"
 }
 ```
 
@@ -147,7 +147,7 @@ Response:
 ```plaintext
 [
     {
-        "id": 1,
+        "id": 2,
         "title": "JUnit Assertions best practices",
         "message": "What are the most recommended assertions to use in JUnit?",
         "creationDate": "2025-08-06T11:28:33.062408",
@@ -156,15 +156,15 @@ Response:
         "course": "Java Fundamentals"
     },
     {
-        "id": 2,
+        "id": 3,
         "title": "How to mock services in unit tests",
         "message": "Is Mockito enough to mock third-party services during tests?",
         "creationDate": "2025-08-06T11:28:57.170167",
         "status": "OPEN",
         "user": "Laura Ruiz",
         "course": "Web Development with JavaScript"
-    }
-] ...
+    }...
+] 
 ```
 
 🔸 Obtener detalle de tópico por ID (con respuestas)
@@ -173,29 +173,29 @@ GET /topic/{id}
 Response:
 ```plaintext
 {
-  "id": 1,
-  "title": "Updated title",
-  "message": "Updated message",
-  "creationDate": "2025-08-06T10:37:04.907401",
-  "status": "OPEN",
-  "userName": "Ana Martínez",
-  "courseName": "Automated Testing with Selenium",
-  "answers": [
-    {
-      "id": 1,
-      "message": "You can use Selenium with JUnit to run full browser tests efficiently.",
-      "creationDate": "2025-08-06T21:27:28.752374",
-      "user": "Carlos Gómez",
-      "solution": false
-    },
-    {
-      "id": 2,
-      "message": "Headless mode helps you run tests in CI/CD pipelines.",
-      "creationDate": "2025-08-06T21:29:11.845317",
-      "user": "Luis Torres",
-      "solution": true
-    }
-  ]
+    "id": 3,
+    "title": "How to mock services in unit tests",
+    "message": "Is Mockito enough to mock third-party services during tests?",
+    "creationDate": "2025-08-06T11:28:57.170167",
+    "status": "OPEN",
+    "userName": "Laura Ruiz",
+    "courseName": "Web Development with JavaScript",
+    "answers": [
+        {
+            "id": 4,
+            "message": "Spring Boot's @WebMvcTest is useful for controller tests without loading the full context.",
+            "creationDate": "2025-08-06T21:27:28.752374",
+            "user": "Pedro Torres",
+            "solution": false
+        },
+        {
+            "id": 5,
+            "message": "Using @MockBean to mock dependencies can keep your tests isolated and clean.",
+            "creationDate": "2025-08-06T21:27:28.752374",
+            "user": "Ana Martínez",
+            "solution": true
+        }
+    ]
 }
 ```
 
@@ -205,14 +205,33 @@ PUT /topic/{id}
 Body JSON:
 ```plaintext
 {
-  "title": "Updated title",
-  "message": "Updated message"
+  "title": "Título actualizado",
+  "message": "Mensaje actualizado",
+  "status" : "OPEN",
+  "userId": 1,
+  "courseId": 4
 }
 ```
+Response:
+
+```plaintext
+{
+    "id": 1,
+    "title": "Título actualizado",
+    "message": "Mensaje actualizado",
+    "status": "OPEN",
+    "creationDate": "2025-08-06T10:37:04.907401",
+    "user": "Ana Martínez",
+    "courseName": "Automated Testing with Selenium"
+}
+```
+
 🔸 Eliminar un tópico
 DELETE /topic/{id}
 
-Valida si el ID existe previamente con Optional.isPresent() antes de eliminar con deleteById().
+```plaintext
+Response: 204 ok (No Content)
+```
 
 👤 Autor
 Eliana Méndez – QA Engineer y Java Developer
