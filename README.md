@@ -117,9 +117,11 @@ Body JSON:
 
 ```plaintext
 {
-  "title": "How to test with Selenium?",
-  "message": "What is the best approach for end-to-end testing in Java?",
-  "courseName": "Automated Testing with Selenium"
+  "title": "Managing test data in CI/CD pipelines",
+  "message": "How do you manage test datasets when using GitHub Actions or Jenkins?",
+  "status": "OPEN",
+  "userId": 4,
+  "courseId": 2
 }
 ```
 
@@ -127,13 +129,13 @@ Response:
 
 ```plaintext
 {
-  "id": 1,
-  "title": "How to test with Selenium?",
-  "message": "What is the best approach for end-to-end testing in Java?",
-  "creationDate": "2025-08-06T10:37:04.907401",
-  "status": "OPEN",
-  "userName": "Ana Martínez",
-  "courseName": "Automated Testing with Selenium"
+    "id": 11,
+    "title": "Managing test data in CI/CD pipelines",
+    "message": "How do you manage test datasets when using GitHub Actions or Jenkins?",
+    "creationDate": "2025-08-08T12:52:33.5621958",
+    "status": "OPEN",
+    "user": "Pedro Torres",
+    "course": "Web Development with JavaScript"
 }
 ```
 
@@ -144,16 +146,25 @@ Response:
 
 ```plaintext
 [
-  {
-    "id": 1,
-    "title": "How to test with Selenium?",
-    "message": "What is the best approach for end-to-end testing in Java?",
-    "creationDate": "2025-08-06T10:37:04.907401",
-    "status": "OPEN",
-    "userName": "Ana Martínez",
-    "courseName": "Automated Testing with Selenium"
-  }
-]
+    {
+        "id": 1,
+        "title": "JUnit Assertions best practices",
+        "message": "What are the most recommended assertions to use in JUnit?",
+        "creationDate": "2025-08-06T11:28:33.062408",
+        "status": "OPEN",
+        "user": "Carlos Gómez",
+        "course": "Java Fundamentals"
+    },
+    {
+        "id": 2,
+        "title": "How to mock services in unit tests",
+        "message": "Is Mockito enough to mock third-party services during tests?",
+        "creationDate": "2025-08-06T11:28:57.170167",
+        "status": "OPEN",
+        "user": "Laura Ruiz",
+        "course": "Web Development with JavaScript"
+    }
+] ...
 ```
 
 🔸 Obtener detalle de tópico por ID (con respuestas)
