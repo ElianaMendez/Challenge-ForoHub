@@ -25,6 +25,9 @@ src/main/java/com/challenge/forohub/
 │   ├── AuthenticationController.java
 │   └── TopicController.java
 │
+├── documentation/
+│   ├── OpenApiConfig.java
+│
 ├── domain/
 │   ├── answer/
 │   │   ├── Answer.java
